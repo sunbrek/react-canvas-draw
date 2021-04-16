@@ -316,6 +316,8 @@ export default class extends PureComponent {
     var lastLine = this.lines[this.lines.length - 1];
     var newLine = [];
 
+    if (lastLine.length == 0)
+      return;
     newLine.push({
       points: [lastLine.points[0], lastLine.points[0]],
       brushColor: "#00FFFF",
@@ -327,8 +329,6 @@ export default class extends PureComponent {
       brushColor: "#FF00FF",
       brushRadius: 15
     });
-
-    console.log(newLine)
     this.simulateDrawingLines({ lines: newLine, immediate: true });
   };
 
