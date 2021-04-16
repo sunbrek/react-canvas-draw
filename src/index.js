@@ -313,11 +313,12 @@ export default class extends PureComponent {
     this.isPressing = false;
     this.saveLine();
 
+    if (this.lines.length == 0)
+      return;
+
     var lastLine = this.lines[this.lines.length - 1];
     var newLine = [];
 
-    if (lastLine.length == 0)
-      return;
     newLine.push({
       points: [lastLine.points[0], lastLine.points[0]],
       brushColor: "#00FFFF",
