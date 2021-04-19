@@ -334,6 +334,7 @@ export default class extends PureComponent {
   };
 
   handleCanvasResize = (entries, observer) => {
+    return;
     const saveData = this.getSaveData();
     for (const entry of entries) {
       const { width, height } = entry.contentRect;
@@ -455,8 +456,6 @@ export default class extends PureComponent {
 
     const width = this.canvas.temp.width;
     const height = this.canvas.temp.height;
-    if (width == 0 || height == 0)
-      return;
     // Copy the line to the drawing canvas
     this.ctx.drawing.drawImage(this.canvas.temp, 0, 0, width, height);
 
