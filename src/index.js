@@ -322,13 +322,13 @@ export default class extends PureComponent {
     newLine.push({
       points: [lastLine.points[0], lastLine.points[0]],
       brushColor: "#00FFFF",
-      brushRadius: 15
+      brushRadius: lastLine.brushRadius
     });
 
     newLine.push({
       points: [lastLine.points[lastLine.points.length - 1], lastLine.points[lastLine.points.length - 1]],
       brushColor: "#FF00FF",
-      brushRadius: 15
+      brushRadius: lastLine.brushRadius
     });
     this.simulateDrawingLines({ lines: newLine, immediate: true });
   };
